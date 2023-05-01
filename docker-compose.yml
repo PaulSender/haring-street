@@ -1,0 +1,83 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: recipes_db
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=recipes
+      - POSTGRES_USER=admin 
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432
+    networks:
+      - default
+  # app:
+  #   build: ./app
+  #   container_name: codetrack_app
+  #   command: python manage.py runserver_plus 0.0.0.0:8000
+  #   volumes:
+  #     - ./app:/code
+  #     - /home/chowes/.local/share/Beacon/user.json:/root/.local/share/Beacon/user.json
+  #     - ./cli/dist/:/cli_dist
+  #   ports:
+  #     - "8000:8000"
+  #     - "8001:8001"
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - default
+  # cli:
+  #   build: ./cli
+  #   container_name: codetrack_cli
+  #   command: /bin/bash -c "tail -F /dev/null"
+  #   ports:
+  #     - "9999:9999"
+  #     - "9998:9998"
+  #   volumes:
+  #     - ./cli:/code
+  #     - /home/chowes/.local/share/Beacon/user.json:/root/.local/share/Beacon/user.json
+  #   depends_on:
+  #     - app
+  #   networks:
+  #     - default
+  #   environment:
+  #     - DATABASE_URL=postgres://postgres:postgres@db:5432/openproject
+
+  # vscode:
+  #   build: ./vscode
+  #   container_name: codetrack-vscode
+  #   command: /bin/bash -c "tail -F /dev/null"
+  #   volumes:
+  #     - ./vscode:/code
+  #   depends_on:
+  #     - app
+  #   networks:
+  #     - default
+
+  # openproject:
+  #   image: openproject/community:11
+  #   container_name: codetrack-openproject
+  #   ports:
+  #     - "3000:80"
+  #   environment:
+  #     - SECRET_KEY_BASE=secretkeybase
+  #   volumes:
+  #     - openproject:/var/openproject
+
+  # gitlab:
+  #   image: 'gitlab/gitlab-ee:latest'
+  #   container_name: codetrack-gitlab
+  #   environment:
+  #     GITLAB_OMNIBUS_CONFIG: |
+  #       # Add any other gitlab.rb configuration here, each on its own line
+  #   ports:
+  #     - '4080:80'
+  #     - '4443:443'
+  #     - '4022:22'
+  #   volumes:
+  #     - 'gitlab_etc:/etc/gitlab'
+  #     - 'gitlab_logs:/var/log/gitlab'
+  #     - 'gitlab_data:/var/opt/gitlab'
