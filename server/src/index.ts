@@ -9,12 +9,12 @@ const typeDefs = `#graphql
 
   # This "Book" type defines the queryable fields for every book in our data source.
 
-  type Accounts {  #note make a different type name
+  type Accounts {  
     username: String
     password: String
   }
 
-  type Recipes{     #note make a different type name
+  type Recipes{     
     title: String
     author: String
     prep_time: Int
