@@ -21,6 +21,21 @@
 2. `npm install`
 3. `npm start`
 
+### Database operations
+
+#### pre-requisites
+1. Install postgresql
+2. Install knex locally `npm install knex`
+3. Install pg package `npm install pg`
+
+#### create migrations
+1. ```npx knex migrate:make <migration_name>```
+2. Edit the newly created file that is under migrations
+3. Follow the sample of the users table
+4. ```npx knex migrate:latest```
+
+
+
 
 ## Road Map
 

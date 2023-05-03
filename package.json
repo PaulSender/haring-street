@@ -1,0 +1,23 @@
+{
+  "name": "haring-street",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "knexfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulSender/haring-street.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulSender/haring-street/issues"
+  },
+  "homepage": "https://github.com/PaulSender/haring-street#readme",
+  "dependencies": {
+    "knex": "^2.4.2",
+    "pg": "^8.10.0"
+  }
+}

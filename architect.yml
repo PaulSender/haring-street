@@ -2,7 +2,6 @@ name: haring-street
 services:
   db:
     image: postgres
-    reserved_name: recipes_db
     debug:
       volumes:
         volume:
@@ -15,3 +14,6 @@ services:
     interfaces:
       main:
         port: 5432
+
+    
+    
