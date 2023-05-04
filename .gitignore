@@ -1,0 +1,6 @@
+server/node_modules*
+server/dist
+server/.env
+frontend/node_modules
+node_modules
+test.js
